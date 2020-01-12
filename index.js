@@ -7,7 +7,29 @@ class Polygon {
   get countSides() {
     return this.sides.length;
   }
+
+  get perimeter() {
+    return this.sides.reduce(function(total, num) {
+      return total + num;
+    });
+  }
+
+
+
 }
 
-a = new Polygon([1, 2, 1, 2]);
-console.log(a.countSides());
+class Triangle extends Polygon {
+    
+    get isVallid(){
+        if (this.sides[0] + this.sides[1] > this.sides[2] && this.sides[1] + this.sides[2] > this.sides[0] && this.sides[2] + this.sides[0] > this.sides[1]){
+            return true}
+        else {
+            return false
+        }
+    }
+
+
+    }
+}
+
+  
