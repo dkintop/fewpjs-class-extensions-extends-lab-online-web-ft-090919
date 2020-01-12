@@ -1,7 +1,7 @@
-// Your code here
 class Polygon {
   constructor(sides) {
     this.sides = sides;
+    this.count = this.sides.length;
   }
 
   get countSides() {
@@ -9,9 +9,12 @@ class Polygon {
   }
 
   get perimeter() {
-    return this.sides.reduce(function(total, num) {
-      return total + num;
-    });
+    if (!Array.isArray(this.sides)) return;
+    let sum = 0;
+    for (var int of this.sides) {
+      sum += int;
+    }
+    return sum;
   }
 }
 
